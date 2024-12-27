@@ -17,6 +17,7 @@ function CustomizeTemplateHeaderFashion() {
         <Navbar />
         <HeroSection />
         <TopPicks />
+        <OurStory />
         <SpecialOffers />
         <Footer />
       </div>

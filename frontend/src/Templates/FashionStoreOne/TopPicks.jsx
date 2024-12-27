@@ -121,21 +121,19 @@ function TopPicks({ onAddSectionClick }) {
           borderRight: isSelected ? '1px solid blue' : 'none',
         }}
       >
-        <FaChevronLeft className="carousel-icon left" onClick={handlePrev} />
         <div className="carousel">
           {products.slice(currentIndex, currentIndex + 4).map((product, idx) => (
             <div key={idx} className="product-item">
               <img
                 src={product.images?.[0]} 
                 alt={product.name}
-                style={{ width: '200px', height: '250px', objectFit: 'cover' }}
+                style={{ width: '200px', height: '300px', objectFit: 'cover' }}
               />
               <h3>{product.name}</h3>
               <p>Rs {product.price}</p>
             </div>
           ))}
         </div>
-        <FaChevronRight className="carousel-icon right" onClick={handleNext} />
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import logo from '../../assets/logo.png';
 import { LaptopIcon, SmartPhone01Icon } from 'hugeicons-react';
 import { useNavigate } from 'react-router-dom';
 import './PreviewScreen.css';
+import axios from 'axios';
 
 function PreviewScreen({ hidden }) {
   const [isMobileView, setIsMobileView] = useState(false);
@@ -22,9 +23,19 @@ function PreviewScreen({ hidden }) {
     document.documentElement.style.setProperty('--viewport-width', '100%');
   };
 
-  const handlePayment = () => {
-    console.log("HHHHHHHHH")
-    navigate('/payment'); 
+  const paymentPlans = () => {
+    navigate('/paymentPlans');
+  }
+
+  const handlePayment = async () => {
+    try {
+      const response = await axios.post('http://localhost:4000/payments/create-checkout-session');
+      if (response.data?.url) {
+        window.location.href = response.data.url; // Redirect to Stripe Checkout
+      }
+    } catch (error) {
+      console.error('Error redirecting to checkout:', error);
+    }
   };
 
   const handleCustomizeWebsite = () => {
@@ -41,9 +52,6 @@ function PreviewScreen({ hidden }) {
       else if (lowerCaseStory.includes('makeup')) {
         navigate('/customize-website-screen-buety'); 
       }
-      else if (lowerCaseStory.includes('furniture')) {
-        navigate('/customize-website-screen-furniture'); 
-      }
       else if (lowerCaseStory.includes('shoes')) {
         navigate('/customize-website-screen-shoes'); 
       }
@@ -56,8 +64,15 @@ function PreviewScreen({ hidden }) {
       else if (lowerCaseStory.includes('gadgets')) {
         navigate('/customize-website-screen-gadgets'); 
       }
+      else if (lowerCaseStory.includes('services')) {
+        navigate('/customize-website-screen-services'); 
+      }
+      else if (lowerCaseStory.includes('service')) {
+        navigate('/customize-website-screen-services'); 
+      }
     }
   };
+
 
   const handleClick = () => {
     navigate('/dashboard'); 
@@ -81,7 +96,7 @@ function PreviewScreen({ hidden }) {
         </div>
         <div className='mybtns'>
           <a onClick={handleCustomizeWebsite}>Customize Website</a>
-          <button onClick={handlePayment}>Publish</button>
+          <button onClick={paymentPlans}>Publish</button>
         </div>
       </div>
     </section>

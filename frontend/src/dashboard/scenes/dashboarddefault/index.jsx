@@ -60,13 +60,13 @@ export default function DashboardDefault() {
           </Grid>
 
           <Grid item xs={12} sm={6} md={5} lg={4} >
-            <AnalyticEcommerce title="Total Page Views" count="4,42,236" percentage={59.3} extra="35,000" backgroundColor="#FFC8DD" delay={200} />
+            <AnalyticEcommerce title="Total Page Views" count="10" percentage={59.3} extra="10" backgroundColor="#FFC8DD" delay={200} />
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={4}>
-            <AnalyticEcommerce title="Total Users" count="78,250" percentage={70.5} extra="8,900" backgroundColor="#CDB4DB" delay={500} />
+            <AnalyticEcommerce title="Total Users" count="5" percentage={70.5} extra="4" backgroundColor="#CDB4DB" delay={500} />
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={4}>
-            <AnalyticEcommerce title="Total Order" count="18,800" percentage={27.4} isLoss color="warning" extra="1,943" backgroundColor="#A2D2FF" delay={700}/>
+            <AnalyticEcommerce title="Total Order" count="1" percentage={27.4} isLoss color="warning" extra="1" backgroundColor="#A2D2FF" delay={700}/>
           </Grid>
           {/* <Grid item xs={12} sm={6} md={4} lg={3}>
             <AnalyticEcommerce title="Total Sales" count="$35,078" percentage={27.4} isLoss color="warning" extra="$20,395" />
@@ -104,10 +104,10 @@ export default function DashboardDefault() {
           <Grid item xs={12} sm={6} md={4} lg={4} sx={{mt:19.5}}> 
             <Grid container alignItems="center" justifyContent="space-between" spacing={3.5}>
               <Grid item xs={12}>
-                <AnalyticEcommerce title="Total Sales" count="$35,078" percentage={27.4} isLoss color="warning" extra="$20,395" backgroundColor="#b7e4c7" delay={500} />
+                <AnalyticEcommerce title="Total Sales" count="$23003" percentage={27.4} isLoss color="warning" extra="$23003" backgroundColor="#b7e4c7" delay={500} />
               </Grid>
               <Grid item xs={12}>
-                <AnalyticEcommerce title="Total Sales" count="$35,078" percentage={27.4} isLoss color="warning" extra="$20,395" backgroundColor="#fff599" delay={1000} />
+                <AnalyticEcommerce title="Total Sales" count="$23003" percentage={27.4} isLoss color="warning" extra="$23003" backgroundColor="#fff599" delay={1000} />
               </Grid>
             </Grid>
           </Grid>

@@ -13,17 +13,12 @@
   font-family: "Anton SC", sans-serif;
 }
 
-.gradient {
-  background: linear-gradient(90deg, rgb(17, 17, 17) 0%, rgb(115, 37, 198) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .box2 h1 {
   font-size: 65px;
 }
 
 .box2 p {
+  font-family: "Anton SC", sans-serif;
   color: black;
   font-size: 25px;
   background-color: transparent;

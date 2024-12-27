@@ -47,6 +47,17 @@ function Cart() {
     };
     
 
+    const handlePayment = async () => {
+        try {
+          const response = await axios.post('http://localhost:4000/payments/create-checkout-session');
+          if (response.data?.url) {
+            window.location.href = response.data.url; // Redirect to Stripe Checkout
+          }
+        } catch (error) {
+          console.error('Error redirecting to checkout:', error);
+        }
+    };
+
     const handleClick = () => {
         navigate('../dashboard');
     };
@@ -88,7 +99,7 @@ function Cart() {
                             >
                                 Save Design
                             </button>
-                            <button onClick={handleOnClick}>Publish</button>
+                            <button onClick={handlePayment}>Publish</button>
                         </div>
                     </div>
                 </section>
@@ -101,7 +112,7 @@ function Cart() {
             <CustomizeWebsiteSidebar />
 
             <Box sx={{ display: "flex", flexDirection: "column", margin: "auto", ml: 7 }}>
-                <Box sx={{ display: "flex", alignItems:"center", justifyContent:"center", gap: "67%"}}>
+                <Box sx={{ display: "flex", alignItems:"center", justifyContent:"center", gap: "60%"}}>
                     <Typography variant='h3' mt={2}>Your Cart</Typography>
                     <Button
                         variant="contained"

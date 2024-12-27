@@ -72,16 +72,16 @@ function GenerateImagePage() {
       // API URLs and tokens
       const apiDetails = [
         {
+          url: "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0",
+          token: "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"
+        },
+        {
           url: "https://api-inference.huggingface.co/models/multimodalart/vintage-ads-flux",
-          token: "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"
+          token: "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"
         },
         {
-          url: "https://api-inference.huggingface.co/models/XLabs-AI/flux-RealismLora",
-          token: "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"
-        },
-        {
-          url: "https://api-inference.huggingface.co/models/jakedahn/flux-midsummer-blues",
-          token: "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"
+          url: "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev",
+          token: "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"
         }
       ];
 

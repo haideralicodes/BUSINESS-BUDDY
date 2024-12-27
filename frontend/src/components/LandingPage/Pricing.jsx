@@ -1,7 +1,14 @@
 import React from 'react';
 import './Pricing.css';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Pricing() {   
+
+  const navigate = useNavigate()
+
+  const getStarted = ()=>{
+      navigate('/signup')
+  }
 
   return (
     <div className='pricing-background'>
@@ -18,7 +25,7 @@ function Pricing() {
                 <h3>Starter</h3>
                 <h2>$9.99<span className='monthly-rate'>/month</span></h2>
               </div>
-              <button className='signup-button'>Sign up now</button>
+              <button onClick={getStarted} className='signup-button'>Sign up now</button>
               <ul>
                 <li><span className='tick-icon'>&#10003;</span>Customizable website templates</li>
                 <li><span className='tick-icon'>&#10003;</span>Basic social media scheduling</li>
@@ -38,7 +45,7 @@ function Pricing() {
                 </div>
                 <h2 style={{backgroundColor:"black", color:"white"}}>$29.99<span className='monthly-rate' style={{backgroundColor:"black", color:"white"}}>/month</span></h2>
               </div>
-              <button className='pro-card-signup-button'>Sign up now</button>
+              <button onClick={getStarted} className='pro-card-signup-button'>Sign up now</button>
               <ul style={{backgroundColor:"black", color:"white"}}>
                 <li style={{backgroundColor:"black", color:"white", width: "260px"}}><span className='tick-icon' style={{backgroundColor:"black", color:"white"}}>&#10003;</span>All features in the Starter Plan</li>
                 <li style={{backgroundColor:"black", color:"white" , width: "260px"}}><span className='tick-icon' style={{backgroundColor:"black", color:"white"}}>&#10003;</span>Advanced website customization</li>
@@ -57,7 +64,7 @@ function Pricing() {
                 <h3>Business</h3>
                 <h2>$49.99<span className='monthly-rate'>/month</span></h2>
               </div>
-              <button className='signup-button'>Sign up now</button>
+              <button onClick={getStarted} className='signup-button'>Sign up now</button>
               <ul>
                 <li><span className='tick-icon'>&#10003;</span>Customizable website templates</li>
                 <li><span className='tick-icon'>&#10003;</span>Basic social media scheduling</li>

@@ -1,15 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, MenuItem, Divider, IconButton } from '@mui/material';
+import { Menu, MenuItem, Divider } from '@mui/material';
 import FormatBoldIcon from '@mui/icons-material/FormatBold';
 import FormatItalicIcon from '@mui/icons-material/FormatItalic';
 import FormatUnderlinedIcon from '@mui/icons-material/FormatUnderlined';
 import PaletteIcon from '@mui/icons-material/Palette';
 import FormatColorFillIcon from '@mui/icons-material/FormatColorFill';
-import { SketchPicker } from 'react-color';
-import 'react-quill/dist/quill.snow.css';
-import './HeroSection.css';
+import { HexColorPicker } from 'react-colorful';
 import portrait from './assets/portrait.webp';
-
 import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
 import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
 import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
@@ -20,12 +17,12 @@ function HeroSection({ onAddSectionClick }) {
   const [selectedElement, setSelectedElement] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
   const [colorPickerVisible, setColorPickerVisible] = useState(false);
-  const [textColor, setTextColor] = useState('black');
+  const [colorPickerType, setColorPickerType] = useState('text'); // 'text' or 'background'
+  const [color, setColor] = useState('#000000');
 
-  // New state to track element-specific styles
   const [elementStyles, setElementStyles] = useState({
-    heading: { color: 'black' },
-    paragraph: { color: 'black' }
+    heading: { color: 'black', backgroundColor: 'transparent' },
+    paragraph: { color: 'black', backgroundColor: 'transparent' },
   });
 
   const [content, setContent] = useState({
@@ -82,8 +79,7 @@ function HeroSection({ onAddSectionClick }) {
     event.preventDefault();
     setSelectedElement(element);
     setAnchorEl(event.currentTarget);
-    // Set current color of the selected element
-    setTextColor(elementStyles[element]?.color || 'black');
+    setColor(elementStyles[element]?.color || '#000000');
   };
 
   const closeContextMenu = () => {
@@ -112,16 +108,14 @@ function HeroSection({ onAddSectionClick }) {
     }
   };
 
-  //NOT WORKING YET!!!!!!!!!!!
-  const applyColor = (color) => {
+  const applyColor = (newColor) => {
     if (selectedElement) {
-      
-      setElementStyles(prevStyles => ({
+      setElementStyles((prevStyles) => ({
         ...prevStyles,
         [selectedElement]: {
           ...prevStyles[selectedElement],
-          color: color
-        }
+          [colorPickerType === 'text' ? 'color' : 'backgroundColor']: newColor,
+        },
       }));
     }
     closeContextMenu();
@@ -129,7 +123,10 @@ function HeroSection({ onAddSectionClick }) {
 
   const applyAlignment = (alignment) => {
     if (selectedElement) {
-      selectedElement.style.textAlign = alignment;
+      const element = document.querySelector(`.${selectedElement}`);
+      if (element) {
+        element.style.textAlign = alignment;
+      }
     }
     closeContextMenu();
   };
@@ -199,15 +196,15 @@ function HeroSection({ onAddSectionClick }) {
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={closeContextMenu}
-        anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
         sx={{
           '& .MuiPaper-root': {
             width: '240px',
           },
         }}
       >
-        <MenuItem onClick={() => applyAlignment('left')}>
+        {/* <MenuItem onClick={() => applyAlignment('left')}>
           <FormatAlignLeftIcon /> Align Left
         </MenuItem>
         <MenuItem onClick={() => applyAlignment('center')}>
@@ -216,7 +213,7 @@ function HeroSection({ onAddSectionClick }) {
         <MenuItem onClick={() => applyAlignment('right')}>
           <FormatAlignRightIcon /> Align Right
         </MenuItem>
-        <Divider/>
+        <Divider /> */}
         <MenuItem onClick={() => applyStyle('bold')}>
           <FormatBoldIcon /> Bold
         </MenuItem>
@@ -226,23 +223,47 @@ function HeroSection({ onAddSectionClick }) {
         <MenuItem onClick={() => applyStyle('underline')}>
           <FormatUnderlinedIcon /> Underline
         </MenuItem>
-        <Divider/>
-        <MenuItem onClick={() => setColorPickerVisible(!colorPickerVisible)}>
+
+        {/* <Divider />
+        <MenuItem
+          onClick={() => {
+            setColorPickerType('background');
+            setColorPickerVisible(!colorPickerVisible);
+          }}
+        >
           <FormatColorFillIcon /> Background Color
         </MenuItem>
-        <MenuItem onClick={() => setColorPickerVisible(!colorPickerVisible)}>
+        <MenuItem
+          onClick={() => {
+            setColorPickerType('text');
+            setColorPickerVisible(!colorPickerVisible);
+          }}
+        >
           <PaletteIcon /> Text Color
         </MenuItem>
+
         {colorPickerVisible && (
           <div style={{ padding: '10px' }}>
-            <SketchPicker
-              color={textColor}
-              onChangeComplete={(color) => applyColor(color.hex)}
+            <HexColorPicker
+              color={color}
+              onChange={(newColor) => {
+                setColor(newColor);
+
+                if (selectedElement) {
+                  setElementStyles((prevStyles) => ({
+                    ...prevStyles,
+                    [selectedElement]: {
+                      ...prevStyles[selectedElement],
+                      [colorPickerType === 'text' ? 'color' : 'backgroundColor']: newColor,
+                    },
+                  }));
+                }
+              }}
             />
           </div>
-        )}
-      </Menu>
+        )} */}
 
+      </Menu>
     </section>
   );
 }

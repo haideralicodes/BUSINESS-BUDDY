@@ -1,13 +1,13 @@
 .sec{
-    background:  linear-gradient(90deg, #FFFFFF 0%, #D2DCFF 100%);
+    /* background:  linear-gradient(90deg, #FFFFFF 0%, #D2DCFF 100%); */
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     width: 98.9vw;
-    height: 500px;
+    height: 700px;
     margin: auto;
-    margin-top: 200px;
     font-family: "Anton SC", sans-serif;
     gap: 20px;
     /* border: 2px solid red; */
@@ -52,16 +52,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 700px
+    width: 1000px
 }
 
 .b2 h1{
-    font-size: 65px;
+    font-size: 70px;
 }
 
 .b2 p{
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
+    font-family: "Anton SC", sans-serif;
 }
 
 .btns{

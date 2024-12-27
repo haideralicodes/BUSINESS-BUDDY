@@ -6,6 +6,7 @@ import Button from '@mui/material/Box';
 import product5 from './assets/product5.webp';
 import Navbar from './Navbar';
 import CustomizeWebsiteSidebar from '../../pages/CustomizeWebsite/CustomizeWebsiteSidebar';
+import axios from 'axios';
 
 function Cart() {
     const [cartItems, setCartItems] = React.useState([]);
@@ -22,9 +23,51 @@ function Cart() {
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     };
 
+    const handlePayment = async () => {
+        try {
+          const response = await axios.post('http://localhost:4000/payments/create-checkout-session');
+          if (response.data?.url) {
+            window.location.href = response.data.url; // Redirect to Stripe Checkout
+          }
+        } catch (error) {
+          console.error('Error redirecting to checkout:', error);
+        }
+    };
+
     return (
         <Box>
-            <Navbar />
+            <div
+                style={{
+                    width: activeMenu ? '60%' : 'calc(100vw - 60px)',
+                    marginLeft: activeMenu ? '0' : '60px',
+                }}
+            >
+                <section className="preview">
+                    <div className="previewRectangle">
+                        <div className="previewbar">
+                            <img
+                                src={logo}
+                                alt="Logo"
+                                style={{ cursor: 'pointer' }}
+                                onClick={handleClick}
+                            />
+                        </div>
+                        <div className="mybtns">
+                            <button
+                                style={{ border: "1px solid blue", backgroundColor: "white", color: "blue" }}
+                                onClick={handleSave}
+                            >
+                                Save Design
+                            </button>
+                            <button onClick={handlePayment}>Publish</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div style={{ marginLeft: "60px" }}>
+                <Navbar />
+            </div>
             <CustomizeWebsiteSidebar />
             <Box sx={{ display: "flex", flexDirection: "column", margin: "auto", ml: 7 }}>
                 <Typography variant='h3' textAlign="center" mt={5}>Your Cart</Typography>

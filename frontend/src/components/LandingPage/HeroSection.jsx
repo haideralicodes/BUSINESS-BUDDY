@@ -1,6 +1,8 @@
 import React from 'react'
 import './HeroSection.css'
 import hero from '../../assets/genWeb.webp'
+import hero1 from './mypic.png'
+import hero2 from './bg.png'
 import PrimaryBtn from './PrimaryBtn'
 import SecondaryBtn from './SecondaryBtn'
 import cog from '../../assets/cog.png'
@@ -11,7 +13,7 @@ function HeroSection() {
       <div className="section">
         <div className="left">
           <div className="mainHeading">
-            <h1 className='gradient actionHeading'>Business Buddy</h1>
+            <h1 className='actionHeading'>Business Buddy</h1>
             <p>Set up your online presence in minutes 
               with our user-friendly platform. No coding 
               skills required, just a few clicks and 
@@ -24,7 +26,7 @@ function HeroSection() {
           </div>
         </div>
         <div className="right">
-          <img className='laptop' src={hero} alt="Laptop" />
+          <img className='laptop' src={hero1} alt="Laptop" />
         </div>
       </div>
     </div>

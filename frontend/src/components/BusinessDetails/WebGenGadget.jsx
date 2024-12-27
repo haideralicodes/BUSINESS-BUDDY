@@ -25,7 +25,7 @@ function WebGenGadget() {
   }, []);
 
   const handleContinue = () => {
-    navigate('/template-view');
+    navigate('/template-view/gadget');
   };
 
   // text animation for para1

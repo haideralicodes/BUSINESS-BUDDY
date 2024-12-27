@@ -10,7 +10,7 @@ router.get('/getCartItems', async (req, res) => {
         // Fetch the cart items for the user
         const cart = await Cart.findOne({ userId }).populate('items.productId');
         if (!cart) {
-            return res.status(404).json({ message: 'Cart not found' });
+            return res.json([]);
         }
         res.json(cart.items);
     } catch (error) {

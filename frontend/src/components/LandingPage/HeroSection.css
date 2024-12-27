@@ -6,7 +6,7 @@
 }
 
 .actionHeading{
-    font-family: "Anton SC", sans-serif;
+    font-family: sans-serif;
 }
 
 .left, .right{
@@ -22,7 +22,9 @@
 }
 
 .left h1{
+    color:"black";
     font-size: 80px;
+    font-family: "Anton SC", sans-serif;
 }
 
 .left p{

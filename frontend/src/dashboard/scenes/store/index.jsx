@@ -16,7 +16,10 @@ const Store = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  const [showDesignBox, setShowDesignBox] = useState(true); // State to control visibility of the design box
+
   const handleDesignSite = () => {
+    setShowDesignBox(false); // Hide the box when the button is clicked
     navigate('/provide-business-details');
   };
 
@@ -69,78 +72,80 @@ const Store = () => {
               onClick: handleDesignSite
             }
           ].map((item, index) => (
-            <Box
-              key={index}
-              sx={{
-                m: 4,
-                bgcolor: "white",
-                borderRadius: "20px",
-                width: "40vw",
-                boxShadow: '0px 10px 30px 0px rgba(0,0,0,0.1)',
-                opacity: animationDelay > index ? 1 : 0, // Fade in effect
-                transform: animationDelay > index ? 'translateY(0)' : 'translateY(120px)', // Pop-out effect
-                transition: 'opacity 0.3s ease, transform 0.3s ease'
-              }}
-            >
+            // Only render the design box if showDesignBox is true
+            item.title === "Design your Website" && !showDesignBox ? null : (
               <Box
+                key={index}
                 sx={{
-                  backgroundColor: colors.white || '#defaultWhiteColor',
-                  width: "100%",
-                  p: 4,
-                  textAlign: 'left',
+                  m: 4,
+                  bgcolor: "white",
+                  borderRadius: "20px",
+                  width: "40vw",
+                  boxShadow: '0px 10px 30px 0px rgba(0,0,0,0.1)',
+                  opacity: animationDelay > index ? 1 : 0, // Fade in effect
+                  transform: animationDelay > index ? 'translateY(0)' : 'translateY(120px)', // Pop-out effect
+                  transition: 'opacity 0.3s ease, transform 0.3s ease'
                 }}
               >
-                <Box sx={{ marginBottom: '10px' }}>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      width: "100%",
-                      alignItems: 'center',
-                      paddingTop: '15px',
-                      paddingBottom: '15px',
-                    }}
-                  >
-                    <Typography
-                      flexGrow={1}
-                      variant="h5"
-                      fontWeight="600"
-                      color={colors.gray[100]}
-                    >
-                      {item.title}
-                    </Typography>
-
-                    <Button
-                      variant="outlined"
+                <Box
+                  sx={{
+                    backgroundColor: colors.white || '#defaultWhiteColor',
+                    width: "100%",
+                    p: 4,
+                    textAlign: 'left',
+                  }}
+                >
+                  <Box sx={{ marginBottom: '10px' }}>
+                    <Box
                       sx={{
                         display: 'flex',
+                        width: "100%",
                         alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '20px',
-                        color: 'black',
-                        borderRadius: '30px',
-                        fontSize: "14px",
-                        fontWeight: 550,
-                        height: "50px",
-                        width: "190px",
-                        backgroundColor: "#B3BEFF",
-                        border: "none",
-                        transition: ".4s ease",
-                        ':hover': {
-                          backgroundColor: "#60308C",
-                          color: "white",
-                        },
+                        paddingTop: '15px',
+                        paddingBottom: '15px',
                       }}
-                      onClick={item.onClick}
                     >
-                      {item.icon}
-                      {item.buttonText}
-                    </Button>
+                      <Typography
+                        flexGrow={1}
+                        variant="h5"
+                        fontWeight="600"
+                        color={colors.gray[100]}
+                      >
+                        {item.title}
+                      </Typography>
+
+                      <Button
+                        variant="outlined"
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: '20px',
+                          color: 'black',
+                          borderRadius: '30px',
+                          fontSize: "14px",
+                          fontWeight: 550,
+                          height: "50px",
+                          width: "190px",
+                          backgroundColor: "#B3BEFF",
+                          border: "none",
+                          transition: ".4s ease",
+                          ':hover': {
+                            backgroundColor: "#60308C",
+                            color: "white",
+                          },
+                        }}
+                        onClick={item.onClick}
+                      >
+                        {item.icon}
+                        {item.buttonText}
+                      </Button>
+                    </Box>
                   </Box>
                 </Box>
               </Box>
-            </Box>
+            )
           ))}
-
         </Grid2>
 
         <Grid2 sx={{ display: "flex", flexDirection: "column", gap: "30px" }}>
@@ -151,11 +156,11 @@ const Store = () => {
           </Grid2>
 
           <Grid2 item xs={12} sm={6} md={5} lg={4} sx={{ width: "500px", mt: 5, mb: 5 }}>
-            <AnalyticEcommerce title="Total Views" count="4,42,236" percentage={59.3} extra="35,000" backgroundColor="#b7e4c7" />
+            <AnalyticEcommerce title="Total Views" count="236" percentage={59.3} extra="35,000" backgroundColor="#b7e4c7" />
           </Grid2>
 
           <Grid2 item xs={12} sm={6} md={5} lg={4} sx={{ width: "500px", mb: 10 }}>
-            <AnalyticEcommerce title="Total Orders" isLoss count="4,236" percentage={64.4} extra="-1000" backgroundColor="#b3beff" />
+            <AnalyticEcommerce title="Total Orders" isLoss count="421" percentage={64.4} extra="-1000" backgroundColor="#b3beff" />
           </Grid2>
         </Grid2>
       </Grid2>

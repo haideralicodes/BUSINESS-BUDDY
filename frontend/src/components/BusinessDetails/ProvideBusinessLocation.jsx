@@ -88,9 +88,9 @@ function ProvideBusinessLocation() {
         else if (lowerCaseStory.includes('gadgets')) {
           navigate('/template-gen-screen/gadget');
         }
-        
-        else if (lowerCaseStory.includes('furniture')) {
-            navigate('/template-gen-screen/furniture');
+
+        else if (lowerCaseStory.includes('gadget')) {
+          navigate('/template-gen-screen/gadget');
         }
 
         else if (lowerCaseStory.includes('clothing')) {
@@ -99,6 +99,14 @@ function ProvideBusinessLocation() {
 
         else if (lowerCaseStory.includes('fashion')) {
           navigate('/template-gen-screen/fashion');
+        }
+
+        else if (lowerCaseStory.includes('services')) {
+          navigate('/template-gen-screen/company-services');
+        }
+        
+        else if (lowerCaseStory.includes('service')) {
+          navigate('/template-gen-screen/company-services');
         }
 
         else{

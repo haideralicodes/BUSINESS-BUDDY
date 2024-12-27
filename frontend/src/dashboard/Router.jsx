@@ -25,6 +25,7 @@ import SavedPosts from "./scenes/posts/SavedPosts";
 import FindDomain from "./scenes/searchDomain/FindDomain";
 import Products from "./scenes/webSuite/Products";
 import Orders from "./scenes/webSuite/Orders";
+import LeadMail from "./scenes/webSuite/LeadMail";
 import Categories from "./scenes/webSuite/Categories";
 import Customers from "./scenes/webSuite/Customers";
 
@@ -55,6 +56,7 @@ const AppRouter = () => {
         <Route path="SearchDomain" element={<FindDomain />} />
         <Route path="Websuite/Products" element={<Products />} />
         <Route path="Websuite/Orders" element={<Orders />} />
+        <Route path="Websuite/LeadMail" element={<LeadMail />} />
         <Route path="Websuite/Categories" element={<Categories />} />
         <Route path="Websuite/Customers" element={<Customers />} />
         <Route path="Websuite/NewCategory" element={<NewCategoryPage />} />

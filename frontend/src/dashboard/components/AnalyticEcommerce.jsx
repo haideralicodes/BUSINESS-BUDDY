@@ -138,7 +138,7 @@ export default function AnalyticEcommerce({ title, count, percentage, isLoss, ex
         <Grid container alignItems="center">
           <Grid item>
             <Typography variant="h1" sx={{fontWeight:"550"}} color="inherit">
-              <CountUp end={numericCount} duration={2.5} separator="," prefix="$" />
+              <CountUp end={numericCount} duration={2.5} separator="," />
             </Typography>
           </Grid>
           {percentage && (

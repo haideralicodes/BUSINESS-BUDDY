@@ -91,7 +91,6 @@ const AddNewSectionMenu = ({ onClose, onAddHeading }) => {
         <div className="menu-body">
           <div className="menu-section">
             <ul>
-                <li onClick={() => handleClick(headingsRef)}><Link to="#">Add Section</Link></li>
                 <li onClick={() => handleClick(headingsRef)}><Link to="#">AI Generator</Link></li>
             </ul>
           </div>
@@ -216,3 +215,59 @@ const AddNewSectionMenu = ({ onClose, onAddHeading }) => {
 };
 
 export default AddNewSectionMenu;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

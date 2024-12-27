@@ -22,6 +22,8 @@ import Inventory2Icon from '@mui/icons-material/Inventory2';
 import CategoryIcon from '@mui/icons-material/Category';
 import Groups2Icon from '@mui/icons-material/Groups2';
 import InsightsIcon from '@mui/icons-material/Insights';
+import LoyaltyIcon from '@mui/icons-material/Loyalty';
+import EmailIcon from '@mui/icons-material/Email';
 
 const SideBar = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -62,7 +64,7 @@ const SideBar = () => {
         <MenuItem
         sx={{borderRadius:"30px", border:'2px solid red'}}
           rootStyles={{
-            margin: "20px 0 60px 0",
+            margin: "20px 0 30px 0",
             color: colors.gray[100],
           }}
         >
@@ -108,8 +110,8 @@ const SideBar = () => {
           active={isActive("/dashboard")}
           menuItemStyles={{
             button: {
-              color: isActive("/dashboard") ? "#ffffff" : "black",
-              background: isActive("/dashboard") ? "#000000" : "transparent",
+              color: "black",
+              // background: isActive("/dashboard") ? "#000000" : "transparent",
               borderTopRightRadius:"30px",
               borderBottomRightRadius:"30px",
               fontSize:"17px",
@@ -139,8 +141,8 @@ const SideBar = () => {
           active={isActive("/dashboard/store")}
           menuItemStyles={{
             button: {
-              color: isActive("/dashboard/store") ? "#ffffff" : "black",
-              background: isActive("/dashboard/store") ? "#000000" : "transparent",
+              color: "black",
+              // background: isActive("/dashboard/store") ? "#000000" : "transparent",
               borderTopRightRadius:"30px",
               borderBottomRightRadius:"30px",
               fontSize:"17px",
@@ -196,8 +198,8 @@ const SideBar = () => {
               fontSize: "17px",
               borderTopRightRadius:"30px",
               borderBottomRightRadius:"30px",
-              color: isActive("/dashboard/GeneratePosters") ? "#ffffff" : "black",
-              background: isActive("/dashboard/GeneratePosters") ? "#000000" : "transparent",
+              // color: isActive("/dashboard/LinkSocialAccounts") ? "#ffffff" : "black",
+              // background: isActive("/dashboard/LinkSocialAccounts") ? "#000000" : "transparent",
               transition: "all 0.3s ease-in-out",
               ":hover": {
                 color: "#ffffff",
@@ -251,8 +253,8 @@ const SideBar = () => {
               fontSize: "17px",
               borderTopRightRadius:"30px",
               borderBottomRightRadius:"30px",
-              color: isActive("/dashboard/GeneratePosters") ? "#ffffff" : "black",
-              background: isActive("/dashboard/GeneratePosters") ? "#000000" : "transparent",
+              // color: isActive("/dashboard/GeneratePosters") ? "#ffffff" : "black",
+              // background: isActive("/dashboard/GeneratePosters") ? "#000000" : "transparent",
               transition: "all 0.3s ease-in-out",
               ":hover": {
                 color: "#ffffff",
@@ -266,6 +268,7 @@ const SideBar = () => {
               path="/dashboard/GeneratePosters"
               colors={colors}
               icon={<StickyNote2OutlinedIcon />}  
+              
             />
             <Item
               title="Calendar"
@@ -281,8 +284,8 @@ const SideBar = () => {
           active={isActive("/dashboard/userProfile")}
           menuItemStyles={{
             button: {
-              color: isActive("/dashboard/userProfile") ? "#ffffff" : "black",
-              background: isActive("/dashboard/userProfile") ? "#000000" : "transparent",
+              color: "black",
+              // background: isActive("/dashboard/userProfile") ? "#000000" : "transparent",
               borderTopRightRadius:"30px",
               borderBottomRightRadius:"30px",
               fontSize:"17px",
@@ -334,13 +337,13 @@ const SideBar = () => {
           <SubMenu
             label="Web Suite"
             icon={<StorefrontRoundedIcon />}  
-            active={isActive("/dashboard/GeneratePosters")}
+            active={isActive("/dashboard/Websuite/Products")}
             style={{
               fontSize: "17px",
               borderTopRightRadius:"30px",
               borderBottomRightRadius:"30px",
-              color: isActive("/dashboard/GeneratePosters") ? "#ffffff" : "black",
-              background: isActive("/dashboard/GeneratePosters") ? "#000000" : "transparent",
+              // color: isActive("/dashboard/Websuite/Products") ? "#ffffff" : "black",
+              // background: isActive("/dashboard/Websuite/Products") ? "#000000" : "transparent",
               transition: "all 0.3s ease-in-out",
               ":hover": {
                 color: "#ffffff",
@@ -360,6 +363,18 @@ const SideBar = () => {
               path="/dashboard/Websuite/Categories"
               colors={colors}
               icon={<CategoryIcon />}  
+            />
+            <Item
+              title="Orders"
+              path="/dashboard/Websuite/Orders"
+              colors={colors}
+              icon={<LoyaltyIcon />}  
+            />
+            <Item
+              title="Lead Mail"
+              path="/dashboard/Websuite/LeadMail"
+              colors={colors}
+              icon={<EmailIcon />}  
             />
           </SubMenu>
         </Menu>
@@ -420,7 +435,7 @@ const SideBar = () => {
           }}
         >
           <Item
-            title="Set Payment"
+            title="Subscriptions"
             path="/dashboard/team"
             colors={colors}
             icon={<PaidOutlinedIcon />}

@@ -16,11 +16,19 @@ function HomePage() {
         <Navbar/>
         <HeroSection/>
       </div>
-      <Benefit/>
-      <GenerateWebsite/>
-      <Pricing/>
-      <Testimonials/>
-      <CallAction/>
+      <section id="benefit">
+        <Benefit/>
+      </section>
+      <section id="gen">
+        <GenerateWebsite/>
+      </section>
+      <section id="pricing">
+        <Pricing/>  
+      </section>
+      <section id="call">
+        <CallAction/>
+      </section>
+      {/* <Testimonials/> */}
       <Footer/>
     </>
   )

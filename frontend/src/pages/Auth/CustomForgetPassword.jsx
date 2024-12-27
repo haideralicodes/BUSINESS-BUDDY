@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import myImg from './myImg.png'
 
 const CustomForgetPassword = () => {
   const [email, setEmail] = useState('');
@@ -105,7 +106,9 @@ const CustomForgetPassword = () => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <Box sx={{ width: "50vw", backgroundColor: "black", height: "100vh" }}></Box>
+      <Box sx={{width: "50vw", backgroundColor: "white", height: "100vh", display:"flex", alignItems:"center", justifyContent:"center"}}>
+        <img src={myImg}/>
+      </Box>
       <Box sx={{ width: "50vw", backgroundColor: "white", height: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
         <Box sx={{ width: "500px", p: 2 }}>
           <Box sx={{ display: "flex", gap: "10px", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
@@ -187,9 +190,9 @@ const CustomForgetPassword = () => {
             </Button>
 
             <Link style={{ display:"flex", justifyContent:"center", textAlign:"center", textDecoration: "none", marginBottom: "-25px", marginTop: "-10px" }}>
-              <KeyboardArrowLeftIcon sx={{color: "#00A76F"}}/>
+              <KeyboardArrowLeftIcon sx={{color: "black"}}/>
               <Typography 
-                sx={{ fontSize: "1rem", fontWeight: "600", lineHeight: "1.57143", color: "#00A76F", ":hover": { textDecoration: "underline" } }}
+                sx={{ fontSize: "1rem", fontWeight: "600", lineHeight: "1.57143", color: "black", ":hover": { textDecoration: "underline" } }}
                 onClick={() => navigate('/login')}
               >
                 Return to sign in

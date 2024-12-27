@@ -6,6 +6,9 @@ const userRoutes = require('./controller/userRoutes');
 const productRoutes = require('./controller/productRoutes');
 const categoryRoutes = require('./controller/categoryRoutes');
 const cartRoutes = require('./controller/cartRoutes');
+const paymentRoutes = require('./controller/paymentRoutes');
+const orderRoutes = require('./controller/orderRoutes');
+const leadMailRoutes = require('./controller/LeadMailRoutes');
 
 const app = express();
 
@@ -33,6 +36,9 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/products', productRoutes);
 app.use('/categories', categoryRoutes);
 app.use('/carts', cartRoutes);
+app.use('/payments', paymentRoutes);
+app.use('/orders', orderRoutes);
+app.use('/leadMails', leadMailRoutes);
 
 
 app.listen(4000, () => {

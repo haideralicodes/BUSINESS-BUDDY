@@ -75,7 +75,7 @@ function Testimonials() {
   return (
     <div className="testimonials-container">
       <div className="boxx1">
-        <h1 className='gradient actionHeading'>What our users say</h1>
+        <h1 className='actionHeading'>What our users say</h1>
         <br />
         <p>Here’s what our users say about our product</p>
       </div>

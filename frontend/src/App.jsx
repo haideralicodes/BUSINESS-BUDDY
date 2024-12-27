@@ -2,6 +2,8 @@ import React from 'react';
 import { Navigate, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
 import CustomSignup from './pages/Auth/CustomSignup';
 import CustomLogin from './pages/Auth/CustomLogin'
 import CustomForgetPassword from './pages/Auth/CustomForgetPassword';
@@ -24,10 +26,14 @@ import WebsiteGenFashionStore from './components/BusinessDetails/WebGenFashion';
 import WebsiteGenGadgetStore from './components/BusinessDetails/WebGenGadget';
 import WebsiteGenFurnitureStore from './components/BusinessDetails/WebGenFurniture'
 import WebsiteGenShoesStore from './components/BusinessDetails/WebGenShoes'
+//for adding Servises Template
+import WebsiteGenServices from './components/BusinessDetails/WebsiteGenServices';
 
 import CustomizeTemplateHeader from './pages/ViewTemplate';
 import CustomizeTemplateHeaderFashion from './pages/CustomizeTemplateHeaderFashion'
 import CustomizeTemplateHeaderGadget from './pages/CustomizeTemplateHeaderGadget'
+//for adding Servises Template
+import CustomizeTemplateHeaderServices from './pages/CustomizeTemplateHeaderServices'
 
 import CustomizeWebsiteScreenFashion from './pages/CustomizeWebsite/CustomizeWebsiteScreen';
 import Checkout from './Templates/FashionStoreOne/Checkout';
@@ -35,6 +41,8 @@ import CustomizeWebsiteScreenShoes from './pages/CustomizeWebsite/CustomizeWebsi
 import CustomizeWebsiteScreenBuety from './pages/CustomizeWebsite/CustomizeWebsiteScreenBuety';
 import CustomizeWebsiteScreenFurniture from './pages/CustomizeWebsite/CustomizeWebsiteScreenFurniture';
 import CustomizeWebsiteScreenGadgets from './pages/CustomizeWebsite/CustomizeWebsiteScreenGadgets';
+//for adding Servises Template
+import CustomizeWebsiteScreenServices from './pages/CustomizeWebsite/CustomizeWebsiteScreenServices';
 
 import AppRouter from './dashboard/Router';
 import ProtectedRoute from './pages/ProtectedRoute'; 
@@ -56,6 +64,19 @@ import BuetyStoreCart from './Templates/BuetyStore/Cart';
 import VerifyEmail from './pages/Auth/VerifyEmail';
 
 import Payment from './pages/CustomizeWebsite/Payment';
+
+import PaymentPlans from './pages/CustomizeWebsite/WebSections/PaymentPlans';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2', // Define your primary color here
+    },
+    secondary: {
+      main: '#dc004e', // Define secondary color if needed
+    },
+  },
+});
 
 function App() {
   const token = localStorage.getItem('token');
@@ -85,16 +106,22 @@ function App() {
         <Route path="/template-gen-screen/gadget" element={<ProtectedRoute element={<WebsiteGenGadgetStore />} />} />
         <Route path="/template-gen-screen/furniture" element={<ProtectedRoute element={<WebsiteGenFurnitureStore />} />} />
         <Route path="/template-gen-screen/shoes" element={<ProtectedRoute element={<WebsiteGenShoesStore />} />} />
+        {/* for adding Servises Template */}
+        <Route path="/template-gen-screen/company-services" element={<ProtectedRoute element={<WebsiteGenServices />} />} />
 
         <Route path="/template-view/buety" element={<ProtectedRoute element={<CustomizeTemplateHeader />} />} />
         <Route path="/template-view/fashion" element={<ProtectedRoute element={<CustomizeTemplateHeaderFashion />} />} />
         <Route path="/template-view/gadget" element={<ProtectedRoute element={<CustomizeTemplateHeaderGadget />} />} />
+        {/* for adding Servises Template */}
+        <Route path="/template-view/services" element={<ProtectedRoute element={<CustomizeTemplateHeaderServices />} />} />
 
         <Route path="/customize-website-screen" element={<ProtectedRoute element={<CustomizeWebsiteScreenFashion />} />} />
         <Route path="/customize-website-screen-shoes" element={<ProtectedRoute element={<CustomizeWebsiteScreenShoes />} />} />
         <Route path="/customize-website-screen-furniture" element={<ProtectedRoute element={<CustomizeWebsiteScreenFurniture />} />} />
         <Route path="/customize-website-screen-buety" element={<ProtectedRoute element={<CustomizeWebsiteScreenBuety />} />} />
         <Route path="/customize-website-screen-gadgets" element={<ProtectedRoute element={<CustomizeWebsiteScreenGadgets />} />} />
+        {/* for adding Servises Template */}
+        <Route path="/customize-website-screen-services" element={<ProtectedRoute element={<CustomizeWebsiteScreenServices />} />} />
 
         <Route path="/customize-website-screen/products" element={<ProtectedRoute element={<Products />} />} />
         <Route path="/customize-website-screen/cart" element={<ProtectedRoute element={<Cart />} />} />
@@ -113,6 +140,8 @@ function App() {
         <Route path="/update-profile" element={<ProtectedRoute element={<UpdateProfile />} />} />
         <Route path="/Posters" element={<ProtectedRoute element={<Posters />} />} />
         <Route path="/Payment" element={<ProtectedRoute element={<Payment />} />} />
+
+        <Route path="/paymentPlans"element={<ProtectedRoute element={<ThemeProvider theme={theme}> <PaymentPlans /></ThemeProvider>} />}/>
 
         {/* Catch-all for undefined routes */}
         <Route path="/*" element={<ErrorPage />} />

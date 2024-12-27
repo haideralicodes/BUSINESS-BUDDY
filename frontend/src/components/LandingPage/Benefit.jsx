@@ -8,8 +8,8 @@ function Benefit() {
   return (
     <div>
       <div className='box2'>
-        <h1 className='gradient actionHeading'>Seamless scheduling</h1>
-        <h1 className='gradient actionHeading'>on your social-media</h1>
+        <h1 className='actionHeading'>Seamless scheduling</h1>
+        <h1 className='actionHeading'>on your social-media</h1>
         <br />
         <p>Never miss a Beat! Schedule your Social-Media Posts</p>
         <p>and Keep Your Audience Engaged 24/7!</p>

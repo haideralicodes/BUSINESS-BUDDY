@@ -22,23 +22,23 @@
   }
   
   .column:nth-child(1) {
-    animation: move1 15s linear infinite;
+    animation: move1 25s linear infinite;
   }
   
   .column:nth-child(2) {
-    animation: move2 16s linear infinite;
+    animation: move2 25s linear infinite;
   }
   
   .column:nth-child(3) {
-    animation: move3 17s linear infinite;
+    animation: move3 25s linear infinite;
   }
   
   .column:nth-child(4) {
-    animation: move4 6s linear infinite;
+    animation: move4 20s linear infinite;
   }
   
   .column:nth-child(5) {
-    animation: move5 7s linear infinite;
+    animation: move5 25s linear infinite;
   }
   
   .column img {

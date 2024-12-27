@@ -13,7 +13,9 @@ import cylinder from '../../assets/cylinder.png';
 import tube from '../../assets/tube.png';
 import pyramid from '../../assets/pyramid.png';
 
-// Ali@1234
+import myImg from './myImg.png'
+import example from './example.png'
+import signup from './signup.png'
 
 const CustomSignup = () => {
   const [firstName, setFirstName] = useState('');
@@ -110,7 +112,9 @@ const CustomSignup = () => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <Box sx={{ width: "50vw", backgroundColor: "black", height: "100vh" }}></Box>
+      <Box sx={{width: "50vw", backgroundColor: "white", height: "100vh", display:"flex", alignItems:"center", justifyContent:"center"}}>
+        <img src={myImg}/>
+      </Box>
       <Box sx={{ width: "50vw", backgroundColor: "white", height: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
         <Box sx={{ width: "500px", p: 2 }}>
             <Typography variant='h5' sx={{ fontSize: "1.7rem", fontWeight: "700", lineHeight: "1.5" }}>Get started absolutely free</Typography>
@@ -119,7 +123,7 @@ const CustomSignup = () => {
                 <Link style={{ textDecoration: "none" }}>
                   <Typography 
                     onClick={() => navigate('/login')}
-                    sx={{ fontSize: "1rem", fontWeight: "600", lineHeight: "1.57143", color: "#00A76F", ":hover": { textDecoration: "underline" } }}>Login</Typography>
+                    sx={{ fontSize: "1rem", fontWeight: "600", lineHeight: "1.57143", color: "black", ":hover": { textDecoration: "underline" } }}>Login</Typography>
                 </Link>
             </Typography>
             <Box component="form" onSubmit={handleSignup} sx={{ display: "flex", flexDirection: "column", gap: "35px", mt: "30px" }}>

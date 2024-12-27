@@ -254,12 +254,20 @@ function Products() {
         navigate('../dashboard');
     };
 
-    const handleOnClick = () => {
-        navigate('../Payment');
+    const handlePayment = async () => {
+        try {
+          const response = await axios.post('http://localhost:4000/payments/create-checkout-session');
+          if (response.data?.url) {
+            window.location.href = response.data.url; // Redirect to Stripe Checkout
+          }
+        } catch (error) {
+          console.error('Error redirecting to checkout:', error);
+        }
     };
 
     return (
         <Box>
+            
             <div
                 style={{
                     width: activeMenu ? '60%' : 'calc(100vw - 60px)',
@@ -287,7 +295,7 @@ function Products() {
                             >
                                 Save Design
                             </button>
-                            <button onClick={handleOnClick}>Publish</button>
+                            <button onClick={handlePayment}>Publish</button>
                         </div>
                     </div>
                 </section>
@@ -296,6 +304,7 @@ function Products() {
             <div style={{ marginLeft: '60px' }}>
                 <Navbar />
             </div>
+
             <CustomizeWebsiteSidebar />
             
             <Box sx={{ 
@@ -350,17 +359,6 @@ function Products() {
                             >
                                 Add to Cart
                             </Button>
-                            <TextField
-                                sx={{ width: '30%', height:"10px", mb:6 }} 
-                                label="Quantity"
-                                name="price"
-                                type="number"
-                                value={quantity}
-                                onChange={setQunatity}
-                                margin="normal"
-                                variant="outlined"
-                                required
-                            />
                             <Typography variant="h6" fontWeight="bold">
                                 Rs {product.price}
                             </Typography>

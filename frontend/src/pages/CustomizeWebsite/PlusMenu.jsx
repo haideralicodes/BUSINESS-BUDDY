@@ -9,6 +9,7 @@ const PlusMenu = ({ onClose, onAddHeading }) => {
     const headingsRef = useRef(null);
     const titlesRef = useRef(null);
     const paragraphsRef = useRef(null);
+    const sectionsRef = useRef(null);
 
     const handleClick = (ref) => {
         console.log('Scrolling to ref:', ref.current);
@@ -44,6 +45,7 @@ const PlusMenu = ({ onClose, onAddHeading }) => {
                             <li onClick={() => handleClick(headingsRef)}><Link to="#">Themed Text</Link></li>
                             <li onClick={() => handleClick(titlesRef)}><Link to="#">Titles</Link></li>
                             <li onClick={() => handleClick(paragraphsRef)}><Link to="#">Paragraphs</Link></li>
+                            <li onClick={() => handleClick(sectionsRef)}><Link to="#">Sections</Link></li>
                         </ul>
                     </div>
                     <div className="menu-preview">
@@ -80,9 +82,30 @@ const PlusMenu = ({ onClose, onAddHeading }) => {
                         <div ref={paragraphsRef} className='paraElement' style={{marginTop:"100px" }}>
                             <p style={{ fontSize: "19px"}}>Paragraphs</p>
                             <hr />
-                            <p style={{fontFamily:"Arial", fontSize:"20px", fontWeight:"600"}}>Arial dolor sit amet consectetur adipisicing elit. Blanditiis nam eum earum veritatis et error totam eligending.</p>
-                            <p style={{fontFamily:"Segoe Script", fontSize:"22px"}}>Helvatica ipsum consectetur adipisicing elit Blanditiis nam eum earum, Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <p style={{fontFamily:"Helvatica", fontSize:"19px"}}>Titl` dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+                            <p onClick={() => addHeading("Arial dolor sit amet consectetur adipisicing elit. Blanditiis nam eum earum veritatis et error totam eligending.")} style={{fontFamily:"Arial", fontSize:"20px", fontWeight:"600"}}>Arial dolor sit amet consectetur adipisicing elit. Blanditiis nam eum earum veritatis et error totam eligending.</p>
+                            <p onClick={() => addHeading("Helvatica ipsum consectetur adipisicing elit Blanditiis nam eum earum, Lorem ipsum dolor sit amet consectetur adipisicing elit.")} style={{fontFamily:"Segoe Script", fontSize:"22px"}}>Helvatica ipsum consectetur adipisicing elit Blanditiis nam eum earum, Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p onClick={() => addHeading("Title dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elite.")} style={{fontFamily:"Helvatica", fontSize:"19px"}}>Title dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+                        </div>
+                        <div ref={sectionsRef} className='paraElement' style={{marginTop:"100px" }}>
+                            <p style={{ fontSize: "19px"}}>Sections</p>
+                            <hr />
+                            <p onClick={() => addHeading("Arial dolor sit amet consectetur adipisicing elit. Blanditiis nam eum earum veritatis et error totam eligending.")} style={{fontFamily:"Arial", fontSize:"20px", fontWeight:"600"}}>Arial dolor sit amet consectetur adipisicing elit. Blanditiis nam eum earum veritatis et error totam eligending.</p>
+                            <p onClick={() => addHeading("Helvatica ipsum consectetur adipisicing elit Blanditiis nam eum earum, Lorem ipsum dolor sit amet consectetur adipisicing elit.")} style={{fontFamily:"Segoe Script", fontSize:"22px"}}>Helvatica ipsum consectetur adipisicing elit Blanditiis nam eum earum, Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p onClick={() => addHeading("Title dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elite.")} style={{fontFamily:"Helvatica", fontSize:"19px"}}>Title dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+                            <div onClick={() => addHeading("Welcome to Our Site")} style={{fontSize:"20px", cursor:"pointer", height:"120px", width:"400px", backgroundColor:"#E8E59B", display:"flex", flexDirection: "column", textAlign:"center", justifyContent:"center", alignItems:"center"}}>
+                                <h3 style={{color:"black"}}>Welcome to Our Site</h3>
+                            </div>
+                            <div onClick={() => addHeading("Welcome to Our Site")} style={{fontSize:"20px", cursor:"pointer", height:"120px", width:"400px", backgroundColor:"#E8E59B", display:"flex", flexDirection: "column", textAlign:"center", justifyContent:"center", alignItems:"center"}}>
+                                <h6>Welcome visitors to your site with a short, engaging introduction. Double click to edit and add your own text.</h6>
+                            </div>
+                            <br />
+                            <div onClick={() => addHeading("Welcome to Our Site")} style={{fontSize:"20px", cursor:"pointer", height:"120px", width:"400px", backgroundColor:"#E8E59B", display:"flex", flexDirection: "column", textAlign:"center", justifyContent:"center", alignItems:"center"}}>
+                                <h3 style={{color:"black"}}>Welcome to Our Site</h3>
+                            </div>
+                            <br />
+                            <div onClick={() => addHeading("Welcome to Our Site")} style={{fontSize:"20px", cursor:"pointer", height:"120px", width:"400px", backgroundColor:"#E8E59B", display:"flex", flexDirection: "column", textAlign:"center", justifyContent:"center", alignItems:"center"}}>
+                                <h6>Welcome visitors to your site with a short, engaging introduction. Double click to edit and add your own text.</h6>
+                            </div>
                         </div>
                     </div>
                 </div>

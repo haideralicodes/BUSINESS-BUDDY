@@ -6,6 +6,7 @@ import AddNewSectionMenu from './AddNewSectionMenu';
 import './CustomizeWebsiteScreen.css';
 import logo from '../../../../frontend/src/assets/logo.png';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function CustomizeWebsiteScreen() {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -16,15 +17,12 @@ function CustomizeWebsiteScreen() {
 
   const handleItemClick = (id) => {
     if (id === 'plus') {
-      setActiveMenu('plus');
+      setShowMenu(true);
     } 
-    else if (id === 'addNewSection') {
-      setActiveMenu('addNewSection');
-    }
   };
 
   const handleCloseMenu = () => {
-    setActiveMenu(null); 
+    setActiveMenu(false); 
   };
 
   const handleAddHeading = (newHeading, fontSize) => {
@@ -56,19 +54,26 @@ function CustomizeWebsiteScreen() {
     navigate('../dashboard');
   };
 
-  const handleOnClick = () => {
-    navigate('../Payment');
+  const handleOnClick = async () => {
+    try {
+      const response = await axios.post('http://localhost:4000/payments/create-checkout-session');
+      if (response.data?.url) {
+        window.location.href = response.data.url; // Redirect to Stripe Checkout
+      }
+    } catch (error) {
+      console.error('Error redirecting to checkout:', error);
+    }
   };
 
   return (
-    <div style={{ display: 'flex', width: '98.9vw' }}>
+    <div style={{ display: 'flex', width: '98.8vw' }}>
       <CustomizeWebsiteSidebar onItemClick={handleItemClick} />
-      {activeMenu === 'plus' && (
+      {activeMenu && (
         <div style={{ width: '60%' }}>
           <PlusMenu onClose={handleCloseMenu} onAddHeading={handleAddHeading} />
         </div>
       )}
-      {activeMenu === 'addNewSection' && (
+      {activeMenu === 'plus' && (
         <div style={{ width: '60%' }}>
           <AddNewSectionMenu onClose={handleCloseMenu} />
         </div>

@@ -114,7 +114,7 @@
 }
 
 .themedText, .titles, .paraElement, .collapsibleText{
-    height: 50vh;
+    height: 100vh;
     display: block;
 }
 

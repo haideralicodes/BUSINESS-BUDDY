@@ -17,11 +17,11 @@ function Navbar() {
           <img src={logo} alt="Logo" />
         </div>
         <ul className="nav-items">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/">FAQs</Link></li>
-          <li><Link to="/">Pricing</Link></li>
-          <li><Link to="/">About Us</Link></li>
-          <li><Link to="/">Help</Link></li>
+          <li><Link>Home</Link></li>
+          <li><Link to="#benefit">Social</Link></li>
+          <li><Link to="#gen">Web Gen</Link></li>
+          <li><Link to="#pricing">Pricing</Link></li>
+          <li><Link to="#call">Info</Link></li>
         </ul>
         <div className="buttons">
           <button className='signup' onClick={navigateToSignup}>Sign Up</button>

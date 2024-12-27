@@ -10,6 +10,10 @@ import {
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 
+import myImg from './myImg.png'
+import example from './example.png'
+import signup from './signup.png'
+
 const CustomLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -70,7 +74,6 @@ const CustomLogin = () => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <Box sx={{ width: "50vw", backgroundColor: "black", height: "100vh" }}></Box>
       <Box sx={{ width: "50vw", backgroundColor: "white", height: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
         <Box sx={{ width: "500px", p: 2 }}>
           <Typography variant='h5' sx={{ fontSize: "1.7rem", fontWeight: "700", lineHeight: "1.5" }}>Sign in to your account</Typography>
@@ -79,7 +82,7 @@ const CustomLogin = () => {
             <Link style={{ textDecoration: "none" }}>
               <Typography 
                 onClick={() => navigate('/signup')}
-                sx={{ fontSize: "1rem", fontWeight: "600", lineHeight: "1.57143", color: "#00A76F", ":hover": { textDecoration: "underline" } }}>Get started</Typography>
+                sx={{ fontSize: "1rem", fontWeight: "600", lineHeight: "1.57143", color: "black", ":hover": { textDecoration: "underline" } }}>Get started</Typography>
             </Link>
           </Typography>
           <Box component="form" onSubmit={handleLogin} sx={{ display: "flex", flexDirection: "column", gap: "35px", mt: "30px" }}>
@@ -113,7 +116,7 @@ const CustomLogin = () => {
             />
             <Link style={{ textDecoration: "none", marginLeft: "71%", marginBottom: "-25px", marginTop: "-10px" }}>
               <Typography 
-                sx={{ fontSize: "1rem", fontWeight: "600", lineHeight: "1.57143", color: "#00A76F", ":hover": { textDecoration: "underline" } }}
+                sx={{ fontSize: "1rem", fontWeight: "600", lineHeight: "1.57143", color: "black", ":hover": { textDecoration: "underline" } }}
                 onClick={() => navigate('/forget-password')}
               >
                 Forgot Password?
@@ -151,6 +154,10 @@ const CustomLogin = () => {
             <Button type="submit" variant="contained" sx={{ backgroundColor: "black", height: "3.3rem", fontWeight:"700", fontSize:"0.9375rem", lineHeight:"1.71429", textDecoration:"none"}}>Sign in</Button>
           </Box>
         </Box>
+      </Box>
+
+      <Box sx={{ width: "50vw", backgroundColor: "white", height: "100vh", display:"flex", alignItems:"center", justifyContent:"center"}}>
+        <img src={signup}/>
       </Box>
     </Box>
   );

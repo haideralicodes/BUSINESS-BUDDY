@@ -5,7 +5,7 @@ import './CustomizeWebsiteSidebar.css';
 
 const sidebarItems = [
   { icon: <FaPlusCircle />, id: 'plus' },
-  { icon: <FaPager />, id: 'addNewSection' },
+  // { icon: <FaPager />, id: 'addNewSection' },
   // { icon: <ImageIcon />, id: 'file' },
 ];
 
