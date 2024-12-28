@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../../../../../Business Buddy/frontend/src/assets/logo.png';
+import logo from './assets/logo.png'
 import Navbar from './Navbar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
