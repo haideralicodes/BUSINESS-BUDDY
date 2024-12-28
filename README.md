@@ -4,7 +4,7 @@ This is a React project bootstrapped with [Vite](https://vite.dev/guide/) using 
 
 ## Getting Started
 
-Follow these steps to get your development environment set up and running.
+Follow these steps to get your development environment set up and running:
 
 ### 1. Install Dependencies
 
@@ -17,6 +17,7 @@ yarn install
 # or
 pnpm install
 ```
+### 2. Run Development Server
 
 To start the development server, run:
 ```bash
