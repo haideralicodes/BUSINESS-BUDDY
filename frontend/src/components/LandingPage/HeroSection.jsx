@@ -14,7 +14,7 @@ function HeroSection() {
         <div className="left">
           <div className="mainHeading">
             <h1 className='actionHeading'>Business Buddy</h1>
-            <p>Set up your online presence in minutes 
+            <p>Set up your online presence in just a few minutes 
               with our user-friendly platform. No coding 
               skills required, just a few clicks and 
               you're live. Focus on growing your business 
