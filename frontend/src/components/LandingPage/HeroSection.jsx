@@ -26,7 +26,7 @@ function HeroSection() {
           </div>
         </div>
         <div className="right">
-          <img className='laptop' src={hero1} alt="Laptop" />
+          <img className='laptop' src={hero2} alt="Laptop" />
         </div>
       </div>
     </div>
