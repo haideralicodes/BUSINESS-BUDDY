@@ -1,0 +1,40 @@
+.scroll-container {
+  width: 98.9vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  animation: scroll 25s linear infinite;
+  white-space: nowrap;
+}
+
+.scroll-image {
+  width: 420px;
+  height: 252px;
+  border-radius: 25px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.scroll-image:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+/* Infinite scrolling effect */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: "Poppins", serif;
+}
+
+*::selection {
+    background-color: #EE64FF; 
+    color: black; 
+  }
+  
+
+@font-face {
+    font-family: anzo1;
+    src: url('./fonts/file.woff2');
+}
+
+@font-face {
+    font-family: anzo2;
+    src: url('./fonts/madefor-text.var.original.woff2');
+}
+
+@font-face {
+    font-family: aprilFordBold;
+    src: url('./fonts/aprilford.otf');
+}
+
+@font-face {
+    font-family: aprilFordRegular;
+    src: url('./fonts/6438e1ee4e7f15980d600b8c_Gilmer-Regular.otf');
+}
+
+@font-face {
+    font-family: aprilFordMedium;
+    src: url('./fonts/64194c0c278e8a2ff6dc0fbe_Gilmer-Medium.otf');
+}
+
+@font-face {
+    font-family: CabinetGrotesk;
+    src: url('./fonts/66e8c450a5ab8a332f9d8579_CabinetGrotesk-Bold.woff2');
+}
+
+@font-face {
+    font-family: Popins;
+    src: url('./fonts/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2');
+}
+
+@font-face {
+    font-family: BlindsAudience;
+    src: url('./fonts/BlindsAudience.otf');
+}
+
+.rotateBtn{
+    transform: rotateZ(20deg); 
+    transform-style: preserve-3d; 
+    will-change: transform;
+    animation: rotateAnimation 15s linear infinite;
+}
+
+@keyframes rotateAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.btnHover{
+    transition:0.4s ease-out;
+    font-size:15px;
+    cursor:pointer;
+    font-weight:500;
+    background-color: black;
+    color:white;
+    padding:10px;
+    width:120px;
+    border-radius:4px;
+}
+
+.btnHover:hover{
+    background-color: #EE64FF;
+    color:black;
+}
