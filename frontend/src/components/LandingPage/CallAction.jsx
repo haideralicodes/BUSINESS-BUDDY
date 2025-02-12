@@ -2,11 +2,14 @@ import React from 'react'
 import star from '../../assets/star.png'
 import spring from '../../assets/spring.png'
 import './CallAction.css'
+import { useNavigate } from 'react-router-dom';
 
 function CallAction() {
 
+    const navigate = useNavigate()
+
     const getStarted = ()=>{
-        console.log("getStarted")
+        navigate('/Signup')
     }
 
   return (
