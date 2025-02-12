@@ -17,7 +17,7 @@ export default function Curve() {
                 width:"200px",
                 backgroundColor: "#EFEFEF",
                 borderBottomRightRadius:"20px",
-                marginBottom:"5px",
+                marginBottom:"40px",
                 display:"flex",
                 justifyContent:"center",
                 alignItems:'center',
