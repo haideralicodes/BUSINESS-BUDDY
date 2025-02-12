@@ -13,7 +13,7 @@ function Navbar() {
 
   return (
     <Box id="nav" sx={{backgroundColor:"#EFEFEF", width:"98.9vw", height:"13vh", display:"flex", alignItems:"center", justifyContent:"space-between"}}>
-      <Box sx={{ml:10, width:"50px", height:"75px", display:"flex", alignItems:"center", justifyContent:"center"}}><img src={logo} /></Box>
+      <Box sx={{ml:10, width:"50px", height:"75px", display:"flex", alignItems:"center", justifyContent:"center"}}><img style={{width:"50px"}} src={logo} /></Box>
         <Box sx={{mr:10, height:"100%", width:"95%", gap:"50px", display:"flex", alignItems:"center", justifyContent:"right"}}>
           <nav style={{fontSize:"15px", height:"100%", gap:"50px", display:"flex", alignItems:"center", justifyContent:"center"}}>
             <a style={{color:"black", textDecoration:"none"}} href="#">Home</a>
