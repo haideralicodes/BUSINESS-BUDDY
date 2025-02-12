@@ -15,7 +15,7 @@ function HeroSection() {
         <Typography sx={{  fontFamily:"BlindsAudience", fontStyle:"italic", fontSize:"13.11vw", textTransform:"uppercase", lineHeight:"11vw", textTransform:"uppercase"}}>Business</Typography>
         <hr style={{width:"530px", height:"7px", backgroundColor:"#EE64FF", border:"none", transform: "rotate(-5deg)", transformOrigin: "bottom left",}}/>
       </Box>
-      <Box sx={{marginRight:"30px", display:"flex", flexDirection:"column", height:"100%", width:"50%", alignItems:"start", justifyContent:"center"}}>
+      <Box sx={{display:"flex", flexDirection:"column", height:"100%", width:"50%", alignItems:"start", justifyContent:"center"}}>
         <Box sx={{ position: "relative" }}>
           <Box sx={{
             position: "absolute",
