@@ -27,7 +27,7 @@ function HeroSection() {
             <Curve/>
             <RotateBtn/>
           </Box>
-          <img src={hero} style={{marginTop:"70px", borderRadius:"30px", height:"500px", width:"1000px"}}/>
+          <img src={hero} style={{marginTop:"70px", borderRadius:"30px", height:"500px"}}/>
         </Box>
       </Box>
     </Box>
