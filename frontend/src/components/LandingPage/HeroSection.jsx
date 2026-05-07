@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import hero from '../../assets/work.webp'
 import Typography from '@mui/material/Typography';
 import RotateBtn from '../../components/LandingPage/RotateBtn'
-import Curve from '../../components/LandingPage/Curve'
 
 function HeroSection() {
 
@@ -24,7 +23,6 @@ function HeroSection() {
             zIndex: 2,
             transform: "translate(-50%, -50%)", 
           }}>
-            {/* <Curve/> */}
             <RotateBtn/>
           </Box>
           <img src={hero} style={{marginTop:"70px", borderRadius:"30px"}}/>
