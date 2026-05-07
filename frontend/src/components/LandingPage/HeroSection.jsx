@@ -24,7 +24,7 @@ function HeroSection() {
             zIndex: 2,
             transform: "translate(-50%, -50%)", 
           }}>
-            <Curve/>
+            {/* <Curve/> */}
             <RotateBtn/>
           </Box>
           <img src={hero} style={{marginTop:"70px", borderRadius:"30px"}}/>
